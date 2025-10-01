@@ -1,0 +1,69 @@
+<section class="form-page">
+  <header>
+    <h2 class="max-w-96 text-center">
+      ¿NECESITAS AYUDA?
+      <span class="text-classic-main-light">ENVÍANOS UN TICKET</span>
+    </h2>
+  </header>
+  <section class="form-section">
+    <h3 class="text-center">ENVIAR TICKET</h3>
+    <form class="form-group" (submit)="handleSubmit($event)">
+      <div class="flex flex-col">
+        <!-- ASUNTO -->
+        <label class="form-label">
+          <app-svg-folder
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Asunto</h4>
+        </label>
+        <input
+          type="text"
+          class="form-input"
+          placeholder="Ej. No puedo entrar al servidor..."
+        />
+        <!-- ASUNTO -->
+      </div>
+      <div class="flex flex-col">
+        <!-- PERSONAJE AFECTADO -->
+        <label class="form-label">
+          <app-svg-user-focus
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Tu personaje afectado</h4>
+        </label>
+        <select id="character" name="character" class="form-select" required>
+          <option value="" disabled selected>Elegí a tu personaje</option>
+          <option value="personaje1">Personaje 1</option>
+          <option value="personaje2">Personaje 2</option>
+          <option value="personaje3">Personaje 3</option>
+        </select>
+        <!-- PERSONAJE AFECTADO -->
+      </div>
+      <div class="flex flex-col">
+        <label class="form-label">
+          <app-svg-folder-file
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Descripción</h4>
+        </label>
+        <textarea
+          class="form-textarea"
+          placeholder="Describí tu problema con el mayor detalle posible..."
+        ></textarea>
+      </div>
+
+      <!-- BOTÓN PARA ENVIAR -->
+      <button type="submit" class="form-button">
+        <span>Enviar</span>
+        <app-svg-send class="[&>div>svg>g>path]:stroke-[1.5]" />
+      </button>
+      <!-- OTROS LINKS -->
+      <div class="form-small-group">
+        <small
+          >Somos un grupo reducido, <span>agradecemos tu paciencia</span>
+        </small>
+      </div>
+    </form>
+  </section>
+</section>
+<ngx-sonner-toaster richColors position="top-right" />

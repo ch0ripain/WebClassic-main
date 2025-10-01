@@ -1,0 +1,150 @@
+<!-- Home -->
+<section
+  class="@container/home relative h-[100dvh] w-full overflow-y-hidden **:select-none"
+>
+  <div id="home" class="absolute h-full w-full" aria-hidden="true">
+    <img
+      ngSrc="images/home-bg.webp"
+      alt="GTA V Blue Beach Background"
+      fill
+      priority
+      class="object-cover"
+    />
+  </div>
+  <div class="absolute top-1/7 w-full">
+    <h1
+      class="text-center tracking-[0.2em] @3xl/home:tracking-[0.4em] @7xl/home:tracking-[0.2em]"
+    >
+      GTA CLASSIC
+    </h1>
+  </div>
+  <a
+    href="home#how-to-play"
+    aria-label="Ir a la sección sobre como jugar en el servidor de GTA Classic"
+    class="bg-classic-main focus:ring-classic-main absolute top-[55%] left-[50%] z-20 -translate-x-1/2 -translate-y-1/2 scale-95 rounded-full p-6 transition-all duration-300 hover:scale-100 focus:ring-2 focus:ring-offset-2 focus:outline-none active:scale-100"
+  >
+    <app-svg-play class="[&>div>svg]:fill-white" />
+  </a>
+  <div class="relative flex h-full w-full items-center justify-center">
+    <img
+      ngSrc="images/home-characters.webp"
+      width="1046"
+      height="808"
+      priority
+      class="main-image-fade absolute z-10 h-auto w-96 object-cover @xl/home:w-[28rem] @7xl/home:w-[36rem]"
+      alt="Three GTA V Characters"
+    />
+    <img
+      ngSrc="images/home-characters.webp"
+      width="1046"
+      height="808"
+      priority
+      class="reflected absolute z-10 h-auto w-96 translate-y-full object-cover @xl/home:w-[27rem] @7xl/home:w-[35rem]"
+      alt="Three GTA V Characters"
+    />
+    <svg style="display: none">
+      <filter id="water-distortion" x="0%" y="0%" width="100%" height="100%">
+        <!-- Turbulencia principal -->
+        <feTurbulence
+          id="main-turbulence"
+          type="turbulence"
+          baseFrequency="0.015 0.04"
+          numOctaves="4"
+          result="mainNoise"
+        />
+
+        <!-- Turbulencia secundaria -->
+        <feTurbulence
+          id="secondary-turbulence"
+          type="turbulence"
+          baseFrequency="0.08 0.06"
+          numOctaves="2"
+          result="secondaryNoise"
+        />
+
+        <!-- Turbulencia terciaria -->
+        <feTurbulence
+          id="third-turbulence"
+          type="turbulence"
+          baseFrequency="0.12 0.18"
+          numOctaves="1"
+          result="thirdNoise"
+        />
+
+        <!-- Combinación de turbulencias -->
+        <feBlend
+          in="mainNoise"
+          in2="secondaryNoise"
+          mode="multiply"
+          result="blendedNoise"
+        />
+
+        <!-- Combinación con el tercer ruido -->
+        <feBlend
+          in="blendedNoise"
+          in2="thirdNoise"
+          mode="multiply"
+          result="combinedNoise"
+        />
+
+        <!-- Desplazamiento principal -->
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="combinedNoise"
+          scale="12"
+          xChannelSelector="R"
+          yChannelSelector="G"
+          result="displaced"
+        />
+
+        <!-- Animación principal -->
+        <animate
+          href="#main-turbulence"
+          attributeName="baseFrequency"
+          dur="1s"
+          values="0.015 0.04;0.025 0.06;0.012 0.035;0.020 0.045;0.015 0.04"
+          repeatCount="indefinite"
+        />
+
+        <!-- Animación secundaria -->
+        <animate
+          href="#secondary-turbulence"
+          attributeName="baseFrequency"
+          dur="0.5s"
+          values="0.08 0.06;0.12 0.08;0.06 0.04;0.10 0.07;0.08 0.06"
+          repeatCount="indefinite"
+        />
+
+        <!-- Animación terciaria -->
+        <animate
+          href="#third-turbulence"
+          attributeName="baseFrequency"
+          dur="1.5s"
+          values="0.12 0.18;0.18 0.24;0.08 0.12;0.15 0.20;0.12 0.18"
+          repeatCount="indefinite"
+        />
+      </filter>
+    </svg>
+  </div>
+</section>
+<section
+  class="@container/play relative flex min-h-[100dvh] flex-col items-center bg-[url(/images/bg-repeat.webp)] bg-[length:25%] bg-repeat md:bg-[length:12.5%]"
+>
+  <!-- COMO JUGAR -->
+  <app-how-to-play
+    class="flex max-w-6xl flex-col items-center gap-y-4 pt-24"
+    id="how-to-play"
+  />
+  <!-- EXPERIENCIA GTA CLASSIC -->
+  <app-experience
+    class="flex max-w-6xl flex-col gap-y-8 pt-24"
+    id="experience"
+  />
+  <!-- ESTADÍSTICAS -->
+  <app-stats-faq
+    class="flex max-w-6xl flex-col gap-y-16 pt-24"
+    id="stats-faq"
+  />
+</section>
+<!-- Footer -->
+<app-footer />

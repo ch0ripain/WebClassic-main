@@ -1,0 +1,43 @@
+<section class="user-page">
+  <section class="user-page-background">
+    <!-- HEADER -->
+    <header class="user-page-header">
+      <img
+        ngSrc="images/user-bg.webp"
+        fill
+        class="object-cover"
+        alt="User Banner Image"
+      />
+    </header>
+    <!-- HEADER -->
+    <main class="user-page-section">
+      <!-- DESCRIPCIÓN Y PERSONAJES -->
+      <section class="user-section-user-and-characters">
+        <!-- DESCRIPCIÓN -->
+        @if(!isLoading()){
+        <app-profile-description />
+        } @else {
+        <app-profile-description-skeleton />
+        }
+        <!-- DESCRIPCIÓN -->
+        <!-- PERSONAJES -->
+        @if(!isLoading()){
+        <app-profile-characters />
+        } @else {
+        <app-profile-characters-skeleton />
+        }
+        <!-- PERSONAJES -->
+      </section>
+      <!-- DESCRIPCIÓN Y PERSONAJES -->
+      <!-- BENEFICIOS -->
+      @if(!isLoading()){
+      <app-profile-subscriptions />
+
+      } @else {
+      <app-profile-subscriptions-skeleton />
+      }
+      <!-- BENEFICIOS -->
+    </main>
+  </section>
+</section>
+<app-footer-small />

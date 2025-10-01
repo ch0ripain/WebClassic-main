@@ -1,0 +1,76 @@
+<section
+  class="@container/whitelist flex min-h-screen w-full flex-col items-center justify-center gap-y-10 bg-[url('/images/bg-repeat.webp')] bg-[length:12.5%] px-4 py-24"
+>
+  <section
+    class="bg-classic-black-dark w-full rounded-2xl p-8 @3xl/whitelist:max-w-5xl"
+  >
+    <header class="relative flex flex-col gap-y-8 pb-16">
+      <h2 class="text-center">CUESTIONARIO</h2>
+      <h3 class="text-center">
+        {{ currentQuestionIndex() + 1 }}/{{ questions.length }}.
+        <span class="text-classic-main-light"
+          >{{ questions[currentQuestionIndex()].question }}</span
+        >
+      </h3>
+    </header>
+    <form
+      class="relative grid grid-cols-1 gap-x-5 gap-y-5 @3xl/whitelist:grid-cols-2"
+      [formGroup]="questionsForm"
+      (ngSubmit)="onSubmit()"
+    >
+      @if(hasQuestionErrors(currentQuestionIndex())){
+      <small
+        class="font-poppins-light col-span-full text-center text-sm text-red-500"
+      >
+        *Debe seleccionar al menos una respuesta
+      </small>
+      } @for(answer of questions[currentQuestionIndex()].answers;track
+      answer.id;let answerIndex = $index){
+      <label
+        [for]="answer.id"
+        class="bg-classic-black-light hover:bg-classic-gray-dark col-span-full flex cursor-pointer items-center gap-x-3 rounded-md px-4 py-3 @3xl/whitelist:col-span-1"
+      >
+        <input
+          type="checkbox"
+          [id]="answer.id"
+          class="cursor-pointer"
+          [checked]="getAnswerValue(currentQuestionIndex(), answerIndex)"
+          (change)="onAnswerChange(currentQuestionIndex(), answerIndex, $event)"
+        />
+        <span class="font-poppins-light text-xs text-pretty md:text-sm">
+          {{ answer.text }}
+        </span>
+      </label>
+      }
+      <div class="col-span-full flex items-center justify-end gap-x-4 pt-6">
+        <button
+          type="button"
+          (click)="goToPreviousQuestion()"
+          class="bg-classic-gray-dark flex items-center justify-center rounded-full px-5 py-2 enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+          [disabled]="currentQuestionIndex() === 0"
+        >
+          <span class="font-poppins text-sm md:text-lg">Anterior</span>
+        </button>
+        @if(currentQuestionIndex() < questions.length - 1){
+        <button
+          type="button"
+          (click)="goToNextQuestion()"
+          class="bg-classic-main flex items-center justify-center rounded-full px-5 py-2 enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <span class="font-poppins text-sm md:text-lg">Siguiente</span>
+        </button>
+        } @if(currentQuestionIndex() === questions.length - 1){
+        <button
+          type="submit"
+          class="bg-classic-main flex items-center justify-center rounded-full px-5 py-2 enabled:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
+          [disabled]="isLoading()"
+        >
+          <span class="font-poppins text-sm md:text-lg">
+            {{ isLoading() ? 'Enviando...' : 'Enviar' }}
+          </span>
+        </button>
+        }
+      </div>
+    </form>
+  </section>
+</section>

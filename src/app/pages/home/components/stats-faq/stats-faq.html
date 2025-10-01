@@ -1,0 +1,175 @@
+<header class="flex flex-col gap-y-8 pt-8">
+  <h2 class="text-center">
+    MIRA LAS ESTADÍSTICAS
+    <span class="text-classic-main-light">DE NUESTRA COMUNIDAD</span>
+  </h2>
+  <article
+    class="flex flex-col items-center justify-center gap-y-6 text-sm @3xl/play:flex-row @3xl/play:text-base"
+  >
+    <ul
+      class="bg-classic-black-dark *:border-classic-main-light flex rounded-full py-3 *:not-last:border-r-2 @3xl/play:rounded-l-full @3xl/play:rounded-r-none @3xl/play:pl-4 @3xl/play:*:border-r-2"
+    >
+      <li class="flex items-center gap-x-2 px-4">
+        <app-svg-user
+          class="[&>div>svg>g>path]:stroke-classic-main-light [&>div>svg>g>path]:stroke-[1]"
+        />
+        <span>+5000 usuarios</span>
+      </li>
+      <li class="flex items-center gap-x-2 px-4">
+        <app-svg-ticket
+          class="[&>div>svg>g>path]:stroke-classic-main-light [&>div>svg>g>path]:stroke-[1]"
+        />
+        <span>+250 tickets resueltos</span>
+      </li>
+    </ul>
+
+    <ul
+      class="bg-classic-black-dark *:not-last:border-classic-main-light flex rounded-full py-3 pr-4 *:not-last:border-r-2 @3xl/play:rounded-l-none @3xl/play:rounded-r-full"
+    >
+      <li class="flex items-center gap-x-2 px-4">
+        <app-svg-staff
+          class="[&>div>svg>path]:stroke-classic-main-light [&>div>svg>path]:stroke-[2]"
+        />
+        <span>+25 miembros staff</span>
+      </li>
+      <li class="flex items-center gap-x-2 px-4">
+        <app-svg-faction
+          class="[&>div>svg>g>path]:stroke-classic-main-light [&>div>svg>g>path]:stroke-[2]"
+        />
+        <span>+5 facciones</span>
+      </li>
+    </ul>
+  </article>
+</header>
+<section class="flex flex-col items-center gap-y-16 px-3 pb-12">
+  <header>
+    <h2 class="text-center">
+      PREGUNTAS
+      <span class="text-classic-main-light">FRECUENTES</span>
+    </h2>
+  </header>
+  <section
+    class="bg-classic-black-dark @container/faq flex w-full flex-col gap-y-5 px-4 py-6 **:list-none xl:-translate-x-[15%]"
+  >
+    <details class="group overflow-hidden">
+      <summary
+        class="bg-classic-black-light relative flex cursor-pointer flex-col p-3"
+      >
+        <div class="flex justify-between">
+          <span
+            class="font-gta group-open:text-classic-main-light group-hover:text-classic-main-light"
+          >
+            ¿Qué necesito para empezar a jugar?
+          </span>
+          <app-svg-arrow-right
+            class="group-hover:[&>div>svg>path]:stroke-classic-main-light group-open:[&>div>svg>path]:stroke-classic-main-light transition-transform duration-300 group-open:rotate-90"
+          />
+        </div>
+      </summary>
+      <hr class="text-classic-main-light" />
+      <p class="bg-classic-black-light px-4 py-2 text-sm">
+        Solo necesitás Grand Theft Auto V original (Steam, Epic Games o Rockstar
+        Launcher) y descargar RageMP. Una vez instalado, buscá nuestro servidor
+        en la lista o conectate con nuestra IP - todo lo demás se descarga
+        automáticamente.
+      </p>
+    </details>
+    <details class="group overflow-hidden">
+      <summary
+        class="bg-classic-black-light relative flex cursor-pointer flex-col p-3"
+      >
+        <div class="flex justify-between">
+          <span
+            class="font-gta group-open:text-classic-main-light group-hover:text-classic-main-light"
+          >
+            ¿Es gratuito jugar?
+          </span>
+          <app-svg-arrow-right
+            class="group-open:[&>div>svg>path]:stroke-classic-main-light group-hover:[&>div>svg>path]:stroke-classic-main-light transition-transform duration-300 group-open:rotate-90"
+          />
+        </div>
+      </summary>
+      <hr class="text-classic-main-light" />
+      <p class="bg-classic-black-light px-4 py-2 text-sm">
+        ¡Completamente gratuito! No hay costos obligatorios para jugar.
+        Ofrecemos una membresía VIP opcional con beneficios como prioridad de
+        conexión y vehículos exclusivos, pero son ventajas cosméticas que no
+        afectan el equilibrio del juego y nos ayudan a mantener el servidor.
+      </p>
+    </details>
+    <details class="group overflow-hidden">
+      <summary
+        class="bg-classic-black-light relative flex cursor-pointer flex-col p-3"
+      >
+        <div class="flex justify-between">
+          <span
+            class="font-gta group-open:text-classic-main-light group-hover:text-classic-main-light"
+          >
+            ¿Qué es el roleplay?
+          </span>
+          <app-svg-arrow-right
+            class="group-open:[&>div>svg>path]:stroke-classic-main-light group-hover:[&>div>svg>path]:stroke-classic-main-light transition-transform duration-300 group-open:rotate-90"
+          />
+        </div>
+      </summary>
+      <hr class="text-classic-main-light" />
+      <p class="bg-classic-black-light px-4 py-2 text-sm">
+        El roleplay es interpretar un personaje dentro del mundo de GTA V como
+        si fuera una persona real con su propia historia y objetivos. Significa
+        vivir como un ciudadano de Los Santos: trabajar, socializar, seguir las
+        leyes (o no) y crear tu propia historia
+      </p>
+    </details>
+    <details class="group overflow-hidden">
+      <summary
+        class="bg-classic-black-light relative flex cursor-pointer flex-col p-3"
+      >
+        <div class="flex justify-between">
+          <span
+            class="font-gta group-open:text-classic-main-light group-hover:text-classic-main-light"
+          >
+            ¿Necesito experiencia previa?
+          </span>
+          <app-svg-arrow-right
+            class="group-open:[&>div>svg>path]:stroke-classic-main-light group-hover:[&>div>svg>path]:stroke-classic-main-light transition-transform duration-300 group-open:rotate-90"
+          />
+        </div>
+      </summary>
+      <hr class="text-classic-main-light" />
+      <p class="bg-classic-black-light px-4 py-2 text-sm *:pl-1">
+        Para nada. Damos la bienvenida a jugadores de todos los niveles y
+        contamos con guías completas, comunidad dispuesta a ayudar y recursos en
+        línea para que cualquier persona pueda integrarse fácilmente desde el
+        primer día.
+      </p>
+    </details>
+    <details class="group overflow-hidden">
+      <summary
+        class="bg-classic-black-light relative flex cursor-pointer flex-col p-3"
+      >
+        <div class="flex justify-between">
+          <span
+            class="font-gta group-open:text-classic-main-light group-hover:text-classic-main-light"
+          >
+            ¿Qué pasa si no sigo las reglas?
+          </span>
+          <app-svg-arrow-right
+            class="group-open:[&>div>svg>path]:stroke-classic-main-light group-hover:[&>div>svg>path]:stroke-classic-main-light transition-transform duration-300 group-open:rotate-90"
+          />
+        </div>
+      </summary>
+      <hr class="text-classic-main-light" />
+      <p class="bg-classic-black-light px-4 py-2 text-sm">
+        Tenemos un reglamento claro que garantiza una experiencia positiva para
+        todos. Las sanciones van desde advertencias para infracciones menores
+        hasta baneos permanentes para casos graves como cheats o trolleo.
+        Nuestro equipo actúa con objetividad y podés apelar cualquier sanción.
+      </p>
+    </details>
+  </section>
+</section>
+<div
+  class="bottom-0 hidden h-[28rem] w-[16rem] xl:absolute xl:block xl:translate-x-[35rem]"
+>
+  <img ngSrc="images/faq-character.webp" fill alt="GTA V Character Image" />
+</div>

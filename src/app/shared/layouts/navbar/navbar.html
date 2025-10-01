@@ -1,0 +1,127 @@
+<header
+  [ngClass]="isOpen() ? 'md:w-[calc(100%-288px)]  ' : ''"
+  class="@container/nav fixed z-50 flex w-full px-2 py-8 backdrop-blur-xs md:px-6"
+>
+  <nav class="relative flex w-full items-center justify-center **:select-none">
+    <!-- CLASSIC RP -->
+    <ul [ngClass]="isOpen() ? 'hidden' : 'navbar-left'">
+      <li>
+        <app-svg-menu class="cursor-pointer" (click)="toggle()" />
+      </li>
+      <li class="hidden @sm/nav:block">
+        <a routerLink="home"><h3>Classic RP</h3></a>
+      </li>
+    </ul>
+    <!-- CLASSIC RP -->
+    <!-- NAV -->
+    <ul class="navbar-content">
+      <li>
+        <a
+          routerLink="home"
+          routerLinkActive="navbar-content-link-active"
+          class="navbar-content-link"
+        >
+          <span class="navbar-content-svg">
+            <app-svg-home />
+            Inicio
+          </span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="home" fragment="how-to-play" class="navbar-content-link">
+          <span class="navbar-content-svg">
+            <app-svg-play />
+            ¿Cómo jugar?
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a
+          routerLink="auth/login"
+          routerLinkActive="navbar-content-link-active"
+          class="navbar-content-link"
+          ><span class="navbar-content-svg">
+            <app-svg-login-user />
+            Iniciar sesión
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="auth/sign-up"
+          routerLinkActive="navbar-content-link-active"
+          class="navbar-content-link"
+          ><span class="navbar-content-svg">
+            <app-svg-sign-up />
+            Registrarse
+          </span>
+        </a>
+      </li>
+    </ul>
+    <!-- NAV -->
+    <!-- OTROS -->
+    <ul class="navbar-right">
+      <li class="navbar-right-pulse-dot">
+        <app-svg-dot />
+      </li>
+      <li>1254 ONLINE</li>
+      <!-- USER ICON MENU DROPDOWN -->
+      <li class="relative flex-col items-center">
+        <button
+          class="navbar-right-icon-button"
+          aria-label="User Icon Button"
+          popovertarget="user-menu"
+        >
+          <img
+            ngSrc="images/raze-discord.webp"
+            width="728"
+            height="757"
+            alt="User Icon Profile"
+            class="rounded-full object-cover"
+          />
+        </button>
+      </li>
+    </ul>
+    <!-- OTROS -->
+  </nav>
+</header>
+<!-- USER MENU -->
+<nav id="user-menu" popover class="navbar-right-menu">
+  <ul class="flex flex-col gap-y-1">
+    <li>
+      <a
+        routerLink="user/ed8de1"
+        routerLinkActive="navbar-right-icon-link-active"
+        class="navbar-right-icon-link"
+        ><span>
+          <app-svg-user />
+        </span>
+        <span>Mi perfil</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="home" routerLinkActive="" class="navbar-right-icon-link"
+        ><span>
+          <app-svg-logout />
+        </span>
+        <span>Cerrar sesión</span>
+      </a>
+    </li>
+    <hr />
+    <li class="flex items-center justify-end gap-x-2 p-2">
+      <button
+        (click)="toggleTheme()"
+        class="bg-classic-main-light relative h-5 w-10 cursor-pointer rounded-full p-1"
+      >
+        <div
+          class="absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-white transition-all duration-300 ease-in-out"
+          [class.left-6]="localStorageService.theme() === 'green'"
+          [class.left-1]="localStorageService.theme() === 'orange'"
+        ></div>
+      </button>
+      <span>Tema</span>
+    </li>
+  </ul>
+</nav>
+<!-- USER MENU -->

@@ -1,0 +1,229 @@
+<nav class="sidebar-nav">
+  <!-- TITULO -->
+  <ul class="sidebar-nav-header">
+    <li class="absolute left-0 pl-8 md:pl-12">
+      <app-svg-x class="cursor-pointer" (click)="toggle()" />
+    </li>
+    <li>
+      <a routerLink="/home">
+        <h3>Classic RP</h3>
+      </a>
+    </li>
+  </ul>
+  <!-- TITULO -->
+  <hr />
+  <!-- NAVEGACIÓN HOME -->
+  <ul>
+    <li>
+      <a
+        routerLink="/home"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-home class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Inicio</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/home"
+        fragment="how-to-play"
+        class="sidebar-nav-link group"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-play class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">¿Cómo jugar?</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="auth/login"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-login-user class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Iniciar sesión</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="auth/sign-up"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-sign-up class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Registrarse</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <!-- NAVEGACIÓN HOME -->
+  <!-- NAVEGACIÓN DE USUARIO -->
+  <ul>
+    <li class="flex justify-center">
+      <span
+        class="bg-classic-main group block w-2/3 rounded-full py-1 text-center"
+        >- Usuario -</span
+      >
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a
+        routerLink="user/ed8de1"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-user class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Mi perfil</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="user"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        [routerLinkActiveOptions]="{exact: true}"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-characters
+            class="group-hover:[&>div>svg>path]:stroke-classic-main-light flex flex-1 justify-end"
+          />
+          <div
+            class="group-hover:text-classic-main-light flex-none px-2 text-center"
+          >
+            Mis personajes
+          </div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="user" class="sidebar-nav-link group"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-friends
+            class="group-hover:[&>div>svg>g>path]:stroke-classic-main-light flex flex-1 justify-end [&>div>svg>g>path]:stroke-white [&>div>svg>g>path]:stroke-[1]"
+          />
+          <div
+            class="group-hover:text-classic-main-light flex-none px-2 text-center"
+          >
+            Mis amigos
+          </div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="user" class="sidebar-nav-link group"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-ticket
+            class="group-hover:[&>div>svg>g>path]:stroke-classic-main-light flex flex-1 justify-end"
+          />
+          <div
+            class="group-hover:text-classic-main-light flex-none px-2 text-center"
+          >
+            Mis tickets
+          </div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="user" class="sidebar-nav-link group"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-report
+            class="group-hover:[&>div>svg>path]:stroke-classic-main-light flex flex-1 justify-end"
+          />
+          <div
+            class="group-hover:text-classic-main-light flex-none px-2 text-center"
+          >
+            Mis reportes
+          </div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <!-- NAVEGACIÓN DE USUARIO -->
+  <!-- NAVEGACIÓN PREMIUM -->
+  <ul>
+    <li class="flex justify-center">
+      <span
+        class="bg-classic-main group block w-2/3 rounded-full py-1 text-center"
+        >- Premium -</span
+      >
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a
+        routerLink="premium/vip/a"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-vip class="sidebar-nav-link-content-svg-path" />
+          <div class="sidebar-nav-link-content-word">Comprar VIP</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <!-- NAVEGACIÓN PREMIUM -->
+  <!-- NAVEGACIÓN DE SOPORTE -->
+  <ul>
+    <li class="flex justify-center">
+      <span
+        class="bg-classic-main group block w-2/3 rounded-full py-1 text-center"
+        >- Soporte -</span
+      >
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <a
+        routerLink="support/ticket/send"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-ticket class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Solicitar ticket</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="support/report/send"
+        class="sidebar-nav-link group"
+        routerLinkActive="sidebar-nav-link-active"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-report class="sidebar-nav-link-content-svg-path" />
+          <div class="sidebar-nav-link-content-word">Solicitar reporte</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <!-- NAVEGACIÓN DE SOPORTE -->
+  <!-- OTRAS OPCIONES -->
+  <hr />
+  <ul class="pb-4 xl:pb-8">
+    <li>
+      <a routerLink="home" class="sidebar-nav-link group"
+        ><span class="sidebar-nav-link-content">
+          <app-svg-logout class="sidebar-nav-link-content-svg-g" />
+          <div class="sidebar-nav-link-content-word">Cerrar sesión</div>
+          <div class="flex-1"></div>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <!-- OTRAS OPCIONES -->
+</nav>

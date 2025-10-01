@@ -1,0 +1,7 @@
+<section class="relative flex w-full">
+  <app-sidebar />
+  <main class="relative w-full" [ngClass]="isOpen() ? 'md:pl-[288px]' : ''">
+    <app-navbar />
+    <router-outlet></router-outlet>
+  </main>
+</section>

@@ -1,0 +1,111 @@
+<section class="form-page">
+  <header>
+    <h2 class="max-w-96 text-center">
+      ¡BIENVENIDO DE VUELTA!
+      <span class="text-classic-main-light">ACCEDE A TU CUENTA</span>
+    </h2>
+  </header>
+  <section class="form-section">
+    <h3 class="text-center">INICIAR SESIÓN</h3>
+    <form [formGroup]="userForm" class="form-group" (submit)="onSubmit()">
+      <div class="relative flex flex-col">
+        <!-- EMAIL -->
+        <label class="form-label" for="email">
+          <app-svg-mail
+            class="[&>div>svg>path]:stroke-classic-main-light [&>div]:h-6 [&>div]:w-6 [&>div>svg>path]:stroke-[1.5]"
+          />
+          <h4>Email</h4>
+        </label>
+        <input
+          id="email"
+          type="email"
+          class="form-input"
+          placeholder="Escribí tu correo electrónico..."
+          autocomplete="email"
+          formControlName="email"
+          [class.form-input-invalid]="userForm.controls.email.invalid && (userForm.controls.email.touched || userForm.controls.email.dirty)"
+        />
+        <!-- VALIDACIONES -->
+        @if (userForm.controls.email.invalid && (userForm.controls.email.touched
+        || userForm.controls.email.dirty)){
+        @if(userForm.controls.email.errors?.['required']){
+        <small class="form-small-error">*Completa el campo</small>
+        } @if(userForm.controls.email.errors?.['email']){
+        <small class="form-small-error">*Ingresa un email válido</small>
+        } }
+        <!-- EMAIL -->
+      </div>
+      <div class="relative flex flex-col">
+        <!-- CONTRASEÑA -->
+        <label class="form-label" for="password">
+          <app-svg-security-lock
+            class="[&>div>svg>g>path]:stroke-classic-main-light [&>div]:h-6 [&>div]:w-6 [&>div>svg>g>path]:stroke-[1.5]"
+          />
+          <h4>Contraseña</h4>
+        </label>
+        <div class="relative w-full">
+          <input
+            id="password"
+            [type]="showPassword() ? 'text' : 'password'"
+            class="form-input"
+            placeholder="Escribí tu contraseña..."
+            autocomplete="current-password"
+            formControlName="password"
+            [class.form-input-invalid]="userForm.controls.password.invalid && (userForm.controls.password.touched || userForm.controls.password.dirty)"
+          />
+          <!-- SVG -->
+          <div
+            class="absolute right-0 bottom-0 cursor-pointer px-3 py-1.5"
+            (click)="togglePasswordVisibility()"
+          >
+            @if (showPassword()) {
+            <app-svg-eye-open stroke="#0c0c0c" />
+            } @else {
+            <app-svg-eye-close stroke="#0c0c0c" />
+            }
+          </div>
+        </div>
+        <!-- VALIDACIONES -->
+        @if (userForm.controls.password.invalid &&
+        (userForm.controls.password.touched ||
+        userForm.controls.password.dirty)){
+        @if(userForm.controls.password.errors?.['required']){
+        <small class="form-small-error">*Completa el campo</small>
+        } @if(userForm.controls.password.errors?.['minlength']){
+        <small class="form-small-error"
+          >*Debe tener al menos 5 carácteres</small
+        >
+        } }
+        <!-- CONTRASEÑA -->
+      </div>
+
+      <!-- BOTÓN PARA ENVIAR -->
+      <button
+        type="submit"
+        class="form-button"
+        [disabled]="!userForm.valid || isLoading()"
+      >
+        <span>Iniciar sesión</span>
+        @if(isLoading()){
+        <app-svg-spin />
+        } @else {
+        <app-svg-send class="[&>div>svg>g>path]:stroke-[1.5]" />
+        }
+      </button>
+      <!-- OTROS LINKS -->
+      <div class="form-small-group">
+        <small
+          >¿No tenés una cuenta?
+          <a routerLink="/auth/sign-up">Crea tu cuenta</a>
+        </small>
+        <small
+          >¿Olvidaste tu contraseña?
+          <a routerLink="/auth/recovery/reset-password"
+            >Recuperar contraseña</a
+          ></small
+        >
+      </div>
+    </form>
+  </section>
+</section>
+<ngx-sonner-toaster richColors position="top-right" />

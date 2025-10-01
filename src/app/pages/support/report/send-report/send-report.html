@@ -1,0 +1,85 @@
+<section class="form-page">
+  <header>
+    <h2 class="max-w-[28rem] text-center">
+      ¡AYÚDANOS A MANTENER EL ORDEN!
+      <span class="text-classic-main-light">ENVÍANOS TU REPORTE</span>
+    </h2>
+  </header>
+  <section class="form-section">
+    <h3 class="text-center">ENVIAR REPORTE</h3>
+    <form class="form-group" (submit)="handleSubmit($event)">
+      <div class="flex flex-col">
+        <!-- TIPO DE REPORTE -->
+        <label class="form-label">
+          <app-svg-folder
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Tipo de reporte</h4>
+        </label>
+        <select id="reportType" name="reportType" class="form-select" required>
+          <option value="" disabled selected>
+            Selecciona un tipo de reporte...
+          </option>
+          <option value="bug">Bug</option>
+          <option value="jugador">Jugador</option>
+          <option value="abuso-sistema">Abuso de sistema</option>
+        </select>
+        <!-- TIPO DE REPORTE -->
+      </div>
+      <div class="flex flex-col">
+        <!-- PERSONAJE REPORTADO -->
+        <label class="form-label">
+          <app-svg-user-focus
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Personaje reportado</h4>
+        </label>
+        <input
+          type="text"
+          class="form-input"
+          placeholder="Escribe el nombre del personaje..."
+        />
+        <!-- PERSONAJE REPORTADO -->
+      </div>
+      <div class="flex flex-col">
+        <!-- DESCRIPCIÓN DEL REPORTE -->
+        <label class="form-label">
+          <app-svg-folder-file
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Descripción</h4>
+        </label>
+        <textarea
+          class="form-textarea"
+          placeholder="Explicá lo que ocurrió..."
+        ></textarea>
+        <!-- DESCRIPCIÓN DEL REPORTE -->
+      </div>
+      <div class="flex flex-col">
+        <!-- ADJUNTAR LAS PRUEBAS -->
+        <label class="form-label">
+          <app-svg-folder-file-multiple
+            class="[&>div>svg>g>path]:stroke-classic-main-light"
+          />
+          <h4>Adjunta las pruebas</h4>
+        </label>
+        <div class="form-input-file-section">
+          <input type="file" class="form-input-file" multiple />
+        </div>
+        <!-- ADJUNTAR LAS PRUEBAS -->
+      </div>
+      <!-- BOTÓN PARA ENVIAR -->
+      <button type="submit" class="form-button">
+        <span>Enviar</span>
+        <app-svg-send class="[&>div>svg>g>path]:stroke-[1.5]" />
+      </button>
+      <!-- OTROS LINKS -->
+      <div class="form-small-group">
+        <small
+          >Somos un grupo reducido, <span>agradecemos tu paciencia</span></small
+        >
+      </div>
+    </form>
+  </section>
+</section>
+<ngx-sonner-toaster richColors position="top-right" />
